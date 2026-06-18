@@ -10,10 +10,15 @@ elif [[ "$ENV_NAME" == "local" ]]; then
 elif [[ "$ENV_NAME" == "docker" ]]; then
   docker build -t fit4110/iot-ingestion:lab04 .
   docker run -d --rm --name fit4110-iot-lab04 -p 8000:8000 --env-file .env.example fit4110/iot-ingestion:lab04
+
+  cleanup() {
+    docker stop fit4110-iot-lab04 >/dev/null 2>&1 || true
+  }
+  trap cleanup EXIT
+
   npx wait-on http://localhost:8000/health --timeout 30000
   npm run test:local
   EXIT_CODE=$?
-  docker stop fit4110-iot-lab04 || true
   exit $EXIT_CODE
 else
   echo "Usage: bash scripts/run-newman.sh [mock|local|docker]"
