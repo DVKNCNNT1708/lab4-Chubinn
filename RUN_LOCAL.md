@@ -59,8 +59,22 @@ Kết quả mong đợi:
 
 ## 5. Chạy Newman test trên container
 
+Nếu container đã chạy:
+
 ```bash
 npm run test:local
+```
+
+Hoặc dùng script khởi động Docker, chờ service và chạy test:
+
+```bash
+bash scripts/run-newman.sh docker
+```
+
+Hoặc dùng Make target:
+
+```bash
+make test-docker
 ```
 
 Report sinh tại:
