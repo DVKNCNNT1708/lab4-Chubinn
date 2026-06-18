@@ -73,10 +73,11 @@ Trên Windows PowerShell, dùng:
 npm run test:docker
 ```
 
-Trên macOS/Linux, dùng:
+Lưu ý: lệnh này yêu cầu Docker Desktop hoặc Docker CLI đã được cài đặt và có trong PATH.
+Nếu chưa cài Docker, bạn vẫn có thể kiểm tra API local bằng:
 
-```bash
-npm run test:docker
+```powershell
+npm run test:local
 ```
 
 Report sinh tại:

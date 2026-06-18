@@ -23,6 +23,16 @@ function safeRun(command) {
   }
 }
 
+function ensureDockerExists() {
+  const result = spawnSync('docker --version', { stdio: 'ignore', shell: true });
+  if (result.error || result.status !== 0) {
+    console.error('\nERROR: Docker is not installed or not available in PATH.');
+    console.error('Please install Docker Desktop and ensure the docker command is accessible.');
+    console.error('Then rerun: npm run test:docker\n');
+    process.exit(1);
+  }
+}
+
 if (env === 'mock') {
   run('npm run test:mock');
 } else if (env === 'local') {
