@@ -27,7 +27,7 @@ health:
 	curl http://localhost:$(PORT)/health
 
 test-docker:
-	bash scripts/run-newman.sh docker
+	node scripts/run-newman.js docker
 
 stop:
 	docker stop $(CONTAINER_NAME) || true

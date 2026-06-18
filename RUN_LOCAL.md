@@ -61,20 +61,29 @@ Kết quả mong đợi:
 
 Nếu container đã chạy:
 
+Nếu container đã chạy:
+
 ```bash
 npm run test:local
 ```
 
-Hoặc dùng script khởi động Docker, chờ service và chạy test:
+Trên Windows PowerShell, dùng:
 
-```bash
-bash scripts/run-newman.sh docker
+```powershell
+npm run test:docker
 ```
 
-Hoặc dùng Make target:
+Trên macOS/Linux, dùng:
 
 ```bash
-make test-docker
+npm run test:docker
+```
+
+Report sinh tại:
+
+```text
+reports/newman-lab04-local.xml
+reports/newman-lab04-local.html
 ```
 
 Report sinh tại:

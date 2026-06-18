@@ -8,7 +8,7 @@
     "lint:openapi": "spectral lint contracts/*.yaml",
     "test:mock": "newman run postman/collections/FIT4110_lab04_iot_docker.postman_collection.json -e postman/environments/FIT4110_lab04_mock.postman_environment.json -r cli,junit,htmlextra --reporter-junit-export reports/newman-lab04-mock.xml --reporter-htmlextra-export reports/newman-lab04-mock.html",
     "test:local": "newman run postman/collections/FIT4110_lab04_iot_docker.postman_collection.json -e postman/environments/FIT4110_lab04_local.postman_environment.json -r cli,junit,htmlextra --reporter-junit-export reports/newman-lab04-local.xml --reporter-htmlextra-export reports/newman-lab04-local.html",
-    "test:docker": "bash scripts/run-newman.sh docker"
+    "test:docker": "node scripts/run-newman.js docker"
   },
   "devDependencies": {
     "@stoplight/prism-cli": "^5.10.0",
